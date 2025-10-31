@@ -1,11 +1,17 @@
 "use client";
 
 import {useRef} from "react";
-import {projectsData} from "@/lib/data";
 import Image from "next/image";
 import {motion, useScroll, useTransform} from "framer-motion";
+import type {StaticImageData} from "next/image";
 
-type ProjectProps = (typeof projectsData)[number];
+export type ProjectProps = {
+    title: string;
+    description: string;
+    tags: readonly string[];
+    imageUrl: StaticImageData;
+    learnMoreUrl: string;
+};
 
 export default function Project({
                                     title,
