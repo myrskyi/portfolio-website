@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import {motion} from "framer-motion";
 import {links} from "@/lib/data";
 import Link from "next/link";
@@ -10,6 +9,7 @@ import {useActiveSectionContext} from "@/context/active-section-context";
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
+  const basePath = "/";
 
   return (
     <header className="z-[999] relative">
@@ -36,7 +36,7 @@ export default function Header() {
                       activeSection === link.name,
                   }
                 )}
-                href={link.hash}
+                href={`${basePath}${link.hash}`}
                 onClick={() => {
                   setActiveSection(link.name);
                   setTimeOfLastClick(Date.now());

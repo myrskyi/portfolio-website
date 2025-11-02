@@ -4,13 +4,17 @@ import {useRef} from "react";
 import Image from "next/image";
 import {motion, useScroll, useTransform} from "framer-motion";
 import type {StaticImageData} from "next/image";
+import Link from "next/link";
+import {FiArrowUpRight, FiExternalLink} from "react-icons/fi";
 
 export type ProjectProps = {
+    slug: string;
     title: string;
     description: string;
     tags: readonly string[];
     imageUrl: StaticImageData;
     learnMoreUrl: string;
+    detailPath: string;
 };
 
 export default function Project({
@@ -18,7 +22,8 @@ export default function Project({
                                     description,
                                     tags,
                                     imageUrl,
-                                    learnMoreUrl
+                                    learnMoreUrl,
+                                    detailPath
                                 }: ProjectProps) {
     const ref = useRef<HTMLDivElement>(null);
     const {scrollYProgress} = useScroll({
@@ -56,14 +61,26 @@ export default function Project({
                         ))}
                     </ul>
                     <div className="flex justify-end items-end h-full">
-                        <a
-                            href={learnMoreUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-gray-500 text-white text-xs px-3 py-1 rounded-full hover:bg-gray-600 transition"
-                        >
-                            Learn More
-                        </a>
+                        <div className="flex gap-2">
+                            <Link
+                                href={detailPath}
+                                className="group/cta inline-flex items-center gap-3 rounded-full bg-gray-900 px-5 py-2 text-base font-semibold text-white shadow-lg shadow-gray-900/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-800 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 dark:bg-white/20 dark:text-white dark:shadow-black/40 dark:hover:bg-white/30"
+                            >
+                                <span className="tracking-wide">View Project</span>
+                                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-900 transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:rotate-12 dark:bg-white/10 dark:text-white">
+                                    <FiArrowUpRight className="h-4 w-4" />
+                                </span>
+                            </Link>
+                            <a
+                                href={learnMoreUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 rounded-full border border-gray-400 px-4 py-2 text-sm font-medium text-gray-800 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800 dark:text-white dark:border-white/40 dark:hover:bg-white/10"
+                            >
+                                <span>External</span>
+                                <FiExternalLink className="h-4 w-4" />
+                            </a>
+                        </div>
                     </div>
                 </div>
 

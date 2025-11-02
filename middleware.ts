@@ -17,27 +17,50 @@ function isStaticAsset(pathname: string) {
   );
 }
 
+function redirectWithoutWebPrefix(url: URL) {
+  url.pathname = url.pathname.slice("/web".length) || "/";
+  if (!url.pathname.startsWith("/")) {
+    url.pathname = `/${url.pathname}`;
+  }
+  return NextResponse.redirect(url);
+}
+
 export function middleware(request: NextRequest) {
   const hostname = request.headers.get("host") ?? "";
-
-  if (!WEB_HOSTNAMES.has(hostname)) {
-    return NextResponse.next();
-  }
-
   const url = request.nextUrl.clone();
 
-  if (isStaticAsset(url.pathname)) {
+  if (WEB_HOSTNAMES.has(hostname)) {
+    if (isStaticAsset(url.pathname)) {
+      return NextResponse.next();
+    }
+
+    if (url.pathname === "/web" || url.pathname.startsWith("/web/")) {
+      return redirectWithoutWebPrefix(url);
+    }
+
+    if (url.pathname === "/") {
+      url.pathname = "/web";
+      return NextResponse.rewrite(url);
+    }
+
+    const bypassPrefixes = [
+      // Allow canonical project detail routes to resolve without rewriting.
+      "/projects",
+    ];
+    if (bypassPrefixes.some((prefix) => url.pathname.startsWith(prefix))) {
+      return NextResponse.next();
+    }
+
+    if (!url.pathname.startsWith("/web")) {
+      url.pathname = `/web${url.pathname}`;
+      return NextResponse.rewrite(url);
+    }
+
     return NextResponse.next();
   }
 
-  if (url.pathname === "/") {
-    url.pathname = "/web";
-    return NextResponse.rewrite(url);
-  }
-
-  if (!url.pathname.startsWith("/web")) {
-    url.pathname = `/web${url.pathname}`;
-    return NextResponse.rewrite(url);
+  if (url.pathname === "/web" || url.pathname.startsWith("/web/")) {
+    return redirectWithoutWebPrefix(url);
   }
 
   return NextResponse.next();

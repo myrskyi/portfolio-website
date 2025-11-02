@@ -46,109 +46,138 @@ export const links = [
 
 export const projectsData = [
     {
+        slug: "engu-education-platform",
         title: "ENGU - Educational platform",
         description:
             "Leading the transition to new platforms, setting up stable CI/CD Jenkins pipelines.",
         tags: ["C#", "Jenkins", "CI/CD", "macOS"],
         imageUrl: enguImg,
         learnMoreUrl: "https://edu.ylands.com",
+        detailPath: "/projects/engu-education-platform",
     },
     {
+        slug: "vizq-vr-therapeutic-app",
         title: "VIZQ - VR therapeutic app",
         description:
             "Led the development of a VR therapeutic application for autistic children. Architected a scenario-based guidance system. Implemented dynamic VR avatars with IK.",
         tags: ["VR", "IK", "Unity", "AI"],
         imageUrl: vizqImg,
         learnMoreUrl: "https://vizq.com",
+        detailPath: "/projects/vizq-vr-therapeutic-app",
     },
 
     {
+        slug: "match3-stars-casual-pvp",
         title: "Match3 Stars - Casual PVP",
         description:
             "Casual PVP Match3 game using Akka and AWS. Developed multilayer dynamics, meta mini-games, optimized game logic, and built a reactive UI.",
         tags: ["Unity", "C#", "Akka", "AWS", "Multiplayer"],
         imageUrl: match3Img,
-        learnMoreUrl: "https://play.google.com/store/apps/details?id=com.matchstars.match3starspvpchampions",
+        learnMoreUrl:
+            "https://play.google.com/store/apps/details?id=com.matchstars.match3starspvpchampions",
+        detailPath: "/projects/match3-stars-casual-pvp",
     },
     {
+        slug: "bingo-casual",
         title: "Bingo - Casual bingo",
         description:
             "Casual bingo game. Developed backend on AWS to ensure stable multiplayer interactions, smooth performance, and responsive UI.",
         tags: ["Unity", "C#", ".NET", "AWS", "Multiplayer"],
         imageUrl: bingoImg,
-        learnMoreUrl: "https://play.google.com/store/apps/details?id=com.Galaxy4Games.BingoLoveinMontana&hl=en_US&gl=US",
+        learnMoreUrl:
+            "https://play.google.com/store/apps/details?id=com.Galaxy4Games.BingoLoveinMontana&hl=en_US&gl=US",
+        detailPath: "/projects/bingo-casual",
     },
     {
+        slug: "undeads-mmorpg-survival",
         title: "Undeads MMORPG - MMORPG survival",
         description:
             "MMORPG survival game on the Ethereum blockchain with in-game NFTs. Built scalable architectures using AWS, Mirror, and a custom .NET server.",
         tags: ["Unity", "C#", ".NET", "Blockchain", "AWS", "Mirror"],
         imageUrl: undeadsImg,
         learnMoreUrl: "https://undeads.com/",
+        detailPath: "/projects/undeads-mmorpg-survival",
     },
     {
+        slug: "puzzle-fight-match3-pvp",
         title: "Puzzle Fight - Real-time Match-3 PvP",
         description:
             "Real-time Match-3 PvP game. Architected backend with AWS and .NET for seamless multiplayer, matchmaking, and in-game economy.",
         tags: ["Unity", "C#", ".NET", "AWS", "Mirror", "Match-3"],
         imageUrl: puzzlefightImg,
-        learnMoreUrl: "https://galaxy4games.com/our-work/projects/puzzlefight/",
+        learnMoreUrl:
+            "https://galaxy4games.com/our-work/projects/puzzlefight/",
+        detailPath: "/projects/puzzle-fight-match3-pvp",
     },
     {
+        slug: "handy-candy-hyper-casual",
         title: "Handy Candy - Personal HC",
         description:
             "Hyper-casual mobile title. Created reusable game systems to reduce development time and support rapid prototyping for quality releases.",
         tags: ["Unity", "C#", "Android/iOS", "Clean Code", "2D/3D"],
         imageUrl: handycandyImg,
         learnMoreUrl: "https://gitlab.com/unitysource/projects/bear",
+        detailPath: "/projects/handy-candy-hyper-casual",
     },
     {
+        slug: "cosmo-car-hyper-casual",
         title: "Cosmo Car - Personal HC",
         description:
             "Personal hyper-casual project featuring procedural road generation and vehicle control mechanics for engaging gameplay.",
         tags: ["Unity", "C#", "Hyper-casual", "Procedural"],
         imageUrl: cosmoCarImg,
         learnMoreUrl: "https://gitlab.com/unitysource/projects/cosmo-car",
+        detailPath: "/projects/cosmo-car-hyper-casual",
     },
     {
+        slug: "among-us-personal",
         title: "Among Us - Personal",
         description:
             "Team project under tight deadlines. Implemented IO-based gameplay and a simulated multiplayer system to capture cooperative challenges.",
         tags: ["Unity", "C#", "Multiplayer", "Game Jam"],
         imageUrl: amongusImg,
         learnMoreUrl: "https://gitlab.com/unitysource/projects/among-us",
+        detailPath: "/projects/among-us-personal",
     },
     {
+        slug: "reactor-arkanoid",
         title: "Reactor - Indie Arkanoid",
         description:
             "Indie Arkanoid idle project. Brainstormed ideas, documented gameplay mechanics, and prepared for public presentation in an indie setup.",
         tags: ["Unity", "C#", "Indie", "Arkanoid"],
         imageUrl: reactorImg,
         learnMoreUrl: "https://gitlab.com/unitysource/projects/reactor",
+        detailPath: "/projects/reactor-arkanoid",
     },
     {
+        slug: "ragalik-roguelike",
         title: "Ragalik - Roguelike",
         description:
             "Roguelike game exploring world mechanics, weapon systems, and pathfinding. Project stalled early but showcased promising design efforts.",
         tags: ["Unity", "C#", "Roguelike", "Pathfinding"],
         imageUrl: ragalikImg,
         learnMoreUrl: "https://gitlab.com/unitysource/projects/ragalik",
+        detailPath: "/projects/ragalik-roguelike",
     },
     {
+        slug: "worm-hyper-casual",
         title: "Worm - Personal HC",
         description:
             "Personal hyper-casual project featuring spline development and mesh generation for a unique, dynamic gameplay experience.",
         tags: ["Unity", "C#", "Hyper-casual", "Mesh"],
         imageUrl: wormImg,
         learnMoreUrl: "https://gitlab.com/unitysource/wormrearchitect",
+        detailPath: "/projects/worm-hyper-casual",
     },
     {
+        slug: "mr-escape-puzzle",
         title: "Mr Escape - Puzzle",
         description:
             "Puzzle game with a physics engine. Completed as a test project using off-the-shelf packages with custom animation tweaks.",
         tags: ["Unity", "C#", "Puzzle", "Physics"],
         imageUrl: mrEscapeImg,
         learnMoreUrl: "https://gitlab.com/unitysource/projects/mr-escape",
+        detailPath: "/projects/mr-escape-puzzle",
     }
 ] as const;
 

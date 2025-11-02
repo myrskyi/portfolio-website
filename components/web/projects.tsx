@@ -13,10 +13,10 @@ export default function WebProjects() {
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
-      <SectionHeading>Featured web projects</SectionHeading>
+      <SectionHeading>Featured projects</SectionHeading>
       <div>
-        {displayedProjects.map((project, index) => (
-          <React.Fragment key={index}>
+        {displayedProjects.map((project) => (
+          <React.Fragment key={project.slug}>
             <Project {...project} />
           </React.Fragment>
         ))}
