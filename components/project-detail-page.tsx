@@ -46,6 +46,16 @@ function resolveImageMedia(src: StaticImageData | string) {
   return { src, width: src.width, height: src.height };
 }
 
+function resolveMediaSource(src: StaticImageData | string) {
+  if (typeof src === "string") {
+    return src;
+  }
+  if (typeof src === "object" && src !== null && "src" in src) {
+    return src.src;
+  }
+  return "";
+}
+
 function usePrefersReducedMotion() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -260,11 +270,7 @@ export default function ProjectDetailPage({
               })()
             ) : (
               <video
-                src={
-                  typeof detail.hero.media.src === "string"
-                    ? detail.hero.media.src
-                    : detail.hero.media.src.src
-                }
+                src={resolveMediaSource(detail.hero.media.src)}
                 className="h-full w-full object-cover"
                 controls
                 preload="metadata"
@@ -386,11 +392,7 @@ export default function ProjectDetailPage({
                   })()
                 ) : (
                   <video
-                    src={
-                      typeof activeMedia.src === "string"
-                        ? activeMedia.src
-                        : activeMedia.src.src
-                    }
+                    src={resolveMediaSource(activeMedia.src)}
                     className="h-full w-full object-cover"
                     muted
                     playsInline
@@ -561,11 +563,7 @@ export default function ProjectDetailPage({
                 })()
               ) : (
                 <video
-                  src={
-                    typeof detail.gallery[lightboxIndex].src === "string"
-                      ? detail.gallery[lightboxIndex].src
-                      : detail.gallery[lightboxIndex].src.src
-                  }
+                  src={resolveMediaSource(detail.gallery[lightboxIndex].src)}
                   className="h-full w-full object-contain"
                   controls
                   autoPlay

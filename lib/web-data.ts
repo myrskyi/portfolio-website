@@ -15,7 +15,8 @@ import vizqImg from "@/public/projects/vizq.png";
 import mrEscapeImg from "@/public/projects/mrEscape.png";
 import wormImg from "@/public/projects/worm.jpg";
 import levenueImg from "@/public/projects/web/levenue/levenue_2.png";
-import vocabchatImg from "@/public/projects/web/vocabchat1.png";
+import vocabchatImg from "@/public/projects/web/vocab-app/vocabchat1.png";
+import pintedGuruImg from "@/public/projects/web/pinted/guru.png";
 
 export const webProjectsData = [
   {
@@ -34,8 +35,8 @@ export const webProjectsData = [
     description:
       "Coordinated two delivery squads to ship AI-assisted sourcing, intake workflows, and supplier dashboards.",
     tags: ["Python", "Docker", "REST API", "Azure DevOps"],
-    imageUrl: enguImg,
-    learnMoreUrl: "https://pinted.io",
+    imageUrl: pintedGuruImg,
+    learnMoreUrl: "https://pinted.io/guru",
     detailPath: "/projects/pinted-procurement-workspace",
   },
   {

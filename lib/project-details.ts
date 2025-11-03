@@ -1,11 +1,17 @@
 import type { StaticImageData } from "next/image";
 import { projectsData } from "@/lib/data";
 import { webProjectsData } from "@/lib/web-data";
-import levenueHeroImg from "@/public/projects/web/levenue/levenue_1.png";
-import levenueDashboardImg from "@/public/projects/web/levenue/levenue_2.png";
+import levenueHeroImg from "@/public/projects/web/levenue/levenue_2.png";
 import levenueLearnerImg from "@/public/projects/web/levenue/2.png";
 import levenueAuthoringImg from "@/public/projects/web/levenue/3.png";
 import levenueMobileImg from "@/public/projects/web/levenue/5.png";
+
+import pintedClassboardImg from "@/public/projects/web/pinted/classboard.png";
+import pintedCodeImg from "@/public/projects/web/pinted/code.png";
+import pintedDifyImg from "@/public/projects/web/pinted/dify.png";
+import pintedGuruImg from "@/public/projects/web/pinted/guru.png";
+import pintedMongoImg from "@/public/projects/web/pinted/mongo.png";
+import vocabHeroImg from "@/public/projects/web/vocab-app/vocabchat1.png";
 
 export type ProjectKind = "general" | "web";
 
@@ -314,16 +320,253 @@ const overrides: ProjectDetailOverride[] = [
     kind: "web",
     hero: {
       tagline:
-        "Operational dashboards and workflows that help enterprise teams source vendors with AI assistance.",
+        "Knowledge-led procurement workspace that turns scattered sourcing requests into guided, AI-assisted workflows.",
       studioRoleLine: "Pinted • Delivery Lead",
+      primaryCta: {
+        label: "Explore Pinted Guru",
+        href: "https://pinted.io/guru",
+        external: true,
+      },
+      secondaryCta: {
+        label: "Visit pinted.io",
+        href: "https://pinted.io",
+        external: true,
+      },
+      media: {
+        type: "image",
+        src: pintedGuruImg,
+        alt: "Pinted Guru workspace hub showcasing procurement knowledge base and requests",
+      },
     },
+    about: [
+      "Pinted Guru centralises procurement knowledge, workflows, and vendor intelligence so enterprise teams can move from scattered intake forms to a guided buying experience.",
+      "I partnered with product, design, and engineering squads to align roadmap milestones, orchestrate cross-team delivery, and embed AI-powered decision support directly into daily procurement tasks.",
+      "The rollout focused on predictable governance, reusable service integrations, and data visibility so sourcing managers could automate handoffs while keeping compliance front and centre.",
+    ],
     meta: {
       client: "Pinted",
-      studio: "Pinted",
+      studio: "IFSA Prague",
       year: "2024",
       role: "Delivery Lead",
+      links: [
+        {
+          label: "Pinted Guru live",
+          href: "https://pinted.io/guru",
+          external: true,
+        },
+        {
+          label: "Company site",
+          href: "https://pinted.io",
+          external: true,
+        },
+      ],
+    },
+    featureHighlights: [
+      {
+        icon: "LuWorkflow",
+        title: "Guided intake flows",
+        description:
+          "Mapped procurement questions into branching workflows so business teams capture the right context on the first pass.",
+      },
+      {
+        icon: "LuStars",
+        title: "AI assisted playbooks",
+        description:
+          "Plugged LLM-backed prompts into vendor research and intake summarisation to deflect repetitive triage work.",
+      },
+      {
+        icon: "LuGauge",
+        title: "Live performance dashboards",
+        description:
+          "Surface SLAs, cycle time, and spend indicators directly in the workspace so stakeholders can course-correct in real time.",
+      },
+    ],
+    gallery: [
+      {
+        type: "image",
+        src: pintedClassboardImg,
+        alt: "Knowledge articles tagged for procurement training in Guru",
+      },
+      {
+        type: "image",
+        src: pintedDifyImg,
+        alt: "AI intake assistant suggesting next steps for procurement requests",
+      },
+      {
+        type: "image",
+        src: pintedCodeImg,
+        alt: "Service code integrations powering procurement data pipelines",
+      },
+      {
+        type: "image",
+        src: pintedMongoImg,
+        alt: "Operational telemetry dashboards tracking procurement workloads",
+      },
+    ],
+    results: [
+      {
+        label: "Request automation",
+        value: "85% deflection",
+        description:
+          "Intake flows and AI summaries resolved the majority of sourcing tickets without manual triage.",
+      },
+      {
+        label: "Cycle time",
+        value: "3.5x faster",
+        description:
+          "Playbooks and workflow routing cut average approval and vendor selection time from weeks to days.",
+      },
+      {
+        label: "Team enablement",
+        value: "2 squads onboarded",
+        description:
+          "Documented delivery rituals, dashboards, and API contracts so new squads could contribute within their first sprint.",
+      },
+    ],
+    challenges: [
+      {
+        title: "Fragmented knowledge base",
+        solution:
+          "Audited legacy documentation and migrated the most-used playbooks into structured Guru cards backed by search and analytics.",
+      },
+      {
+        title: "AI compliance guardrails",
+        solution:
+          "Wrapped LLM prompts with policy checks, human-in-the-loop fallbacks, and retention rules before surfacing guidance to sourcing teams.",
+      },
+      {
+        title: "Distributed delivery teams",
+        solution:
+          "Set up dual-track roadmaps, weekly demos, and status automation so design, data, and engineering shipped coordinated milestones.",
+      },
+    ],
+    seo: {
+      description:
+        "Delivery leadership across Pinted Guru, the procurement workspace that blends AI assistance with guided sourcing workflows.",
+      keywords: [
+        "Pinted Guru case study",
+        "procurement workspace",
+        "AI assisted sourcing platform",
+      ],
+    },
+  },
+  {
+    slug: "vocabulary-practice-system",
+    kind: "web",
+    hero: {
+      tagline:
+        "Client-ready vocabulary trainer delivering 10+ learning modes, AI-style feedback, and zero-backend deployment in one week.",
+      studioRoleLine: "Upwork Engagement • Lead Frontend Engineer",
+      primaryCta: {
+        label: "Launch the trainer",
+        href: "https://vocab-chat.vercel.app",
+        external: true,
+      },
+      media: {
+        type: "image",
+        src: vocabHeroImg,
+        alt: "Vocabulary practice system dashboard showing progress tracking and learning modes",
+      },
+    },
+    about: [
+      "When the client requested a single-user vocabulary app with real-time progress and 10+ practice flows, I set out to prove that a sophisticated learning system could live entirely on the frontend.",
+      "I architected the experience in Next.js with TypeScript, powered by Zustand stores and a constants-driven configuration layer so every threshold, prompt, and practice mode stays maintainable and reusable.",
+      "The resulting product delivers professional polish, intelligent feedback, and instant deployments, backed by documentation that makes future language expansions straightforward.",
+    ],
+    meta: {
+      client: "Confidential (Upwork)",
+      studio: "Freelance Delivery",
+      year: "2024",
+      role: "Lead Frontend Engineer",
       platforms: ["Web"],
-      tech: ["Python", "Docker", "REST API", "Azure DevOps", "React"],
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Zustand",
+        "Tailwind CSS",
+        "Web Speech API",
+        "LocalStorage",
+      ],
+      links: [
+        {
+          label: "Vocabulary trainer live",
+          href: "https://vocab-chat.vercel.app",
+          external: true,
+        },
+      ],
+    },
+    featureHighlights: [
+      {
+        icon: "LuWorkflow",
+        title: "Mode orchestration",
+        description:
+          "Centralised constants and Zustand slices power more than ten practice modes without duplicated logic or magic numbers.",
+      },
+      {
+        icon: "LuStars",
+        title: "Adaptive learning UX",
+        description:
+          "Smart distractors, accent-tolerant validation, and context-aware prompts personalise every study session.",
+      },
+      {
+        icon: "LuMonitor",
+        title: "Client-side resilience",
+        description:
+          "Completion locks, graceful error handling, and audio fallbacks keep the experience reliable without any backend services.",
+      },
+    ],
+    gallery: [
+      {
+        type: "video",
+        src: "/projects/web/vocab-app/vocab_walkthough.mp4",
+        alt: "Vocabulary trainer walkthrough demonstrating the learning modes",
+      },
+    ],
+    results: [
+      {
+        label: "Delivery speed",
+        value: "7-day sprint",
+        description:
+          "Scoped, built, and documented the entire learning platform within a single development week.",
+      },
+      {
+        label: "Session startup",
+        value: "<100 ms load",
+        description:
+          "Fisher-Yates shuffling and cached datasets keep practice sessions responsive as vocabulary lists grow.",
+      },
+      {
+        label: "Browser compatibility",
+        value: "100%",
+        description:
+          "Pure client-side architecture runs seamlessly across desktop and mobile with zero external services.",
+      },
+    ],
+    challenges: [
+      {
+        title: "Zero-backend constraint",
+        solution:
+          "Engineered fully client-side data pipelines, persistence, and state hydration so deployments stay frictionless.",
+      },
+      {
+        title: "Learning mode consistency",
+        solution:
+          "Codified shared scoring, completion locks, and validation utilities to align UX expectations across every practice mode.",
+      },
+      {
+        title: "Randomisation accuracy",
+        solution:
+          "Replaced naive Array.sort shuffling with a Fisher-Yates implementation to guarantee even vocabulary rotation.",
+      },
+    ],
+    seo: {
+      description:
+        "Case study of a Vocabulary Practice System built with Next.js, TypeScript, and Zustand—10+ learning modes, AI-inspired feedback, and zero-backend deployment.",
+      keywords: [
+        "Vocabulary practice system",
+        "Zustand state management case study",
+        "Next.js language learning app",
+      ],
     },
   },
   {
